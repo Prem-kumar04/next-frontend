@@ -146,11 +146,11 @@ useEffect(() => {
         <header className="border-b bg-white px-8 py-5">
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-slate-500">
-            Welcome Back 👋 —
-            <span className="ml-2 font-semibold capitalize text-blue-600">
-              {role.replace("_", " ")}
-            </span>
-          </p>
+  Welcome Back 👋{" "}
+  <span className="font-semibold capitalize text-blue-600">
+    {role.replace("_", " ")}
+  </span>
+</p>
         </header>
 
         <section className="p-8 space-y-8">

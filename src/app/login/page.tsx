@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useAuthStore } from "@/store/authStore";
 
 export default function LoginPage() {
-
   const login = useAuthStore((state) => state.login);
 
   const [email, setEmail] = useState("");
@@ -36,11 +35,9 @@ export default function LoginPage() {
 
         alert("Login Successful");
         window.location.replace("/dashboard");
-
       } else {
         alert(data.detail || "Invalid Credentials");
       }
-
     } catch (error) {
       console.error(error);
       alert("Something went wrong");
@@ -69,13 +66,21 @@ export default function LoginPage() {
         <h1 className="text-center text-4xl font-bold text-slate-800">
           Welcome Back
         </h1>
+
         <p className="mt-2 text-center text-slate-500">
           Sign in to continue
         </p>
 
         <div className="mt-8">
-          <label className="mb-2 block font-medium text-slate-700">Email</label>
+          <label
+            htmlFor="email"
+            className="mb-2 block font-medium text-slate-700"
+          >
+            Email
+          </label>
+
           <input
+            id="email"
             type="email"
             placeholder="Enter your email"
             value={email}
@@ -85,8 +90,15 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-5">
-          <label className="mb-2 block font-medium text-slate-700">Password</label>
+          <label
+            htmlFor="password"
+            className="mb-2 block font-medium text-slate-700"
+          >
+            Password
+          </label>
+
           <input
+            id="password"
             type="password"
             placeholder="Enter your password"
             value={password}
@@ -102,7 +114,6 @@ export default function LoginPage() {
           Login
         </button>
 
-        {/* ✅ Sign up link */}
         <p className="mt-6 text-center text-slate-500">
           Don&apos;t have an account?{" "}
           <Link
