@@ -476,34 +476,74 @@ export default function UsersPage() {
 
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">Username</label>
-                  <input value={editUsername}
+                  <label
+                    htmlFor="editUsername"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
+                    Username
+                  </label>
+                  <input
+                    id="editUsername"
+                    value={editUsername}
                     onChange={(e) => setEditUsername(e.target.value)}
-                    className="w-full rounded border p-3" />
+                    className="w-full rounded border p-3"
+                  />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">First Name</label>
-                  <input value={editFirstName}
+                  <label
+                    htmlFor="editFirstName"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
+                    First Name
+                  </label>
+                  <input
+                    id="editFirstName"
+                    value={editFirstName}
                     onChange={(e) => setEditFirstName(e.target.value)}
-                    className="w-full rounded border p-3" />
+                    className="w-full rounded border p-3"
+                  />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">Last Name</label>
-                  <input value={editLastName}
+                  <label
+                    htmlFor="editLastName"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
+                    Last Name
+                  </label>
+                  <input
+                    id="editLastName"
+                    value={editLastName}
                     onChange={(e) => setEditLastName(e.target.value)}
-                    className="w-full rounded border p-3" />
+                    className="w-full rounded border p-3"
+                  />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">Email</label>
-                  <input value={editEmail}
+                  <label
+                    htmlFor="editEmail"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="editEmail"
+                    value={editEmail}
                     onChange={(e) => setEditEmail(e.target.value)}
-                    className="w-full rounded border p-3" />
+                    className="w-full rounded border p-3"
+                  />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="mb-1 block text-sm font-medium text-slate-600">Role</label>
-                  <input value={editRoleName}
+                  <label
+                    htmlFor="editRoleName"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
+                    Role
+                  </label>
+                  <input
+                    id="editRoleName"
+                    value={editRoleName}
                     onChange={(e) => setEditRoleName(e.target.value)}
-                    className="w-full rounded border p-3" />
+                    className="w-full rounded border p-3"
+                  />
                 </div>
               </div>
 
