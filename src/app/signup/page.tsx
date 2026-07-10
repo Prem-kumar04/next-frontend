@@ -36,8 +36,8 @@ export default function SignupPage() {
             username: email.split("@")[0],
             first_name: firstName,
             last_name: lastName,
-            email: email,
-            password: password,
+            email,
+            password,
           }),
         }
       );
@@ -84,12 +84,17 @@ export default function SignupPage() {
           Sign up to continue
         </p>
 
+        {/* Full Name */}
         <div className="mt-8">
-          <label className="mb-2 block font-medium text-slate-700">
+          <label
+            htmlFor="fullName"
+            className="mb-2 block font-medium text-slate-700"
+          >
             Full Name
           </label>
 
           <input
+            id="fullName"
             type="text"
             placeholder="Enter your name"
             value={fullName}
@@ -98,12 +103,17 @@ export default function SignupPage() {
           />
         </div>
 
+        {/* Email */}
         <div className="mt-5">
-          <label className="mb-2 block font-medium text-slate-700">
+          <label
+            htmlFor="email"
+            className="mb-2 block font-medium text-slate-700"
+          >
             Email
           </label>
 
           <input
+            id="email"
             type="email"
             placeholder="Enter your email"
             value={email}
@@ -112,12 +122,17 @@ export default function SignupPage() {
           />
         </div>
 
+        {/* Password */}
         <div className="mt-5">
-          <label className="mb-2 block font-medium text-slate-700">
+          <label
+            htmlFor="password"
+            className="mb-2 block font-medium text-slate-700"
+          >
             Password
           </label>
 
           <input
+            id="password"
             type="password"
             placeholder="Enter your password"
             value={password}
@@ -126,12 +141,17 @@ export default function SignupPage() {
           />
         </div>
 
+        {/* Confirm Password */}
         <div className="mt-5">
-          <label className="mb-2 block font-medium text-slate-700">
+          <label
+            htmlFor="confirmPassword"
+            className="mb-2 block font-medium text-slate-700"
+          >
             Confirm Password
           </label>
 
           <input
+            id="confirmPassword"
             type="password"
             placeholder="Confirm your password"
             value={confirmPassword}
@@ -160,4 +180,3 @@ export default function SignupPage() {
     </form>
   );
 }
-
