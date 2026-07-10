@@ -169,30 +169,42 @@ export default function ProfilePage() {
             {isEditing ? (
               <div className="mt-4 space-y-3">
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">
+                  <label
+                    htmlFor="firstName"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
                     First Name
                   </label>
                   <input
+                    id="firstName"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                     className="w-full rounded-lg border p-3 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">
+                  <label
+                    htmlFor="lastName"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
                     Last Name
                   </label>
                   <input
+                    id="lastName"
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                     className="w-full rounded-lg border p-3 focus:border-blue-500 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">
+                  <label
+                    htmlFor="newPassword"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
                     New Password (optional)
                   </label>
                   <input
+                    id="newPassword"
                     type="password"
                     placeholder="Leave blank to keep current"
                     value={password}
@@ -201,10 +213,14 @@ export default function ProfilePage() {
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-sm font-medium text-slate-600">
+                  <label
+                    htmlFor="confirmPassword"
+                    className="mb-1 block text-sm font-medium text-slate-600"
+                  >
                     Confirm Password
                   </label>
                   <input
+                    id="confirmPassword"
                     type="password"
                     placeholder="Confirm new password"
                     value={confirmPassword}

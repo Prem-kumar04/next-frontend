@@ -11,6 +11,7 @@ describe("TaskCard", () => {
           title: "Test Task",
           description: "Testing",
           status: "Pending",
+          assigned_employee_id: null,
         }}
       />
     );
@@ -20,6 +21,7 @@ describe("TaskCard", () => {
     ).toBeInTheDocument();
   });
 });
+
 it("renders task description", () => {
   render(
     <TaskCard
@@ -28,6 +30,7 @@ it("renders task description", () => {
         title: "Test Task",
         description: "Testing Description",
         status: "Pending",
+        assigned_employee_id: null,
       }}
     />
   );
@@ -38,6 +41,7 @@ it("renders task description", () => {
     )
   ).toBeInTheDocument();
 });
+
 it("renders task status", () => {
   render(
     <TaskCard
@@ -46,6 +50,7 @@ it("renders task status", () => {
         title: "Test Task",
         description: "Testing Description",
         status: "Completed",
+        assigned_employee_id: null,
       }}
     />
   );
@@ -56,6 +61,7 @@ it("renders task status", () => {
     )
   ).toBeInTheDocument();
 });
+
 it("shows Edit button when onEdit is provided", () => {
   render(
     <TaskCard
@@ -64,6 +70,7 @@ it("shows Edit button when onEdit is provided", () => {
         title: "Test Task",
         description: "Testing",
         status: "Pending",
+        assigned_employee_id: null,
       }}
       onEdit={() => {}}
     />
@@ -73,6 +80,7 @@ it("shows Edit button when onEdit is provided", () => {
     screen.getByText("Edit")
   ).toBeInTheDocument();
 });
+
 it("does not show Edit button when onEdit is not provided", () => {
   render(
     <TaskCard
@@ -81,6 +89,7 @@ it("does not show Edit button when onEdit is not provided", () => {
         title: "Test Task",
         description: "Testing",
         status: "Pending",
+        assigned_employee_id: null,
       }}
     />
   );
@@ -89,6 +98,7 @@ it("does not show Edit button when onEdit is not provided", () => {
     screen.queryByText("Edit")
   ).not.toBeInTheDocument();
 });
+
 it("shows Delete button when onDelete is provided", () => {
   render(
     <TaskCard
@@ -97,6 +107,7 @@ it("shows Delete button when onDelete is provided", () => {
         title: "Test Task",
         description: "Testing",
         status: "Pending",
+        assigned_employee_id: null,
       }}
       onDelete={() => {}}
     />
@@ -106,6 +117,7 @@ it("shows Delete button when onDelete is provided", () => {
     screen.getByText("Delete")
   ).toBeInTheDocument();
 });
+
 it("calls onEdit when Edit button is clicked", async () => {
   const editMock = jest.fn();
 
@@ -116,6 +128,7 @@ it("calls onEdit when Edit button is clicked", async () => {
         title: "Test Task",
         description: "Testing",
         status: "Pending",
+        assigned_employee_id: null,
       }}
       onEdit={editMock}
     />
@@ -127,6 +140,7 @@ it("calls onEdit when Edit button is clicked", async () => {
 
   expect(editMock).toHaveBeenCalled();
 });
+
 it("calls onDelete when Delete button is clicked", async () => {
   const deleteMock = jest.fn();
 
@@ -137,6 +151,7 @@ it("calls onDelete when Delete button is clicked", async () => {
         title: "Test Task",
         description: "Testing",
         status: "Pending",
+        assigned_employee_id: null,
       }}
       onDelete={deleteMock}
     />
