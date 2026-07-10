@@ -33,7 +33,7 @@ type TaskFormProps = {
 export default function TaskForm({
   employees,
   createTask,
-}: TaskFormProps) {
+}: Readonly<TaskFormProps>) {
   const {
     register,
     handleSubmit,
@@ -89,24 +89,25 @@ export default function TaskForm({
 
         <div>
           <select
-  {...register("assignedEmployeeId", {
-    valueAsNumber: true,
-  })}
-  className="w-full rounded border p-3"
->
-  <option value="0">
-    Select Employee
-  </option>
+            {...register("assignedEmployeeId", {
+              valueAsNumber: true,
+            })}
+            className="w-full rounded border p-3"
+          >
+            <option value="0">
+              Select Employee
+            </option>
 
-  {employees.map((employee) => (
-    <option
-      key={employee.id}
-      value={employee.id}
-    >
-      {employee.name}
-    </option>
-  ))}
-</select>
+            {employees.map((employee) => (
+              <option
+                key={employee.id}
+                value={employee.id}
+              >
+                {employee.name}
+              </option>
+            ))}
+          </select>
+
           {errors.assignedEmployeeId && (
             <p className="mt-1 text-sm text-red-600">
               {errors.assignedEmployeeId.message}

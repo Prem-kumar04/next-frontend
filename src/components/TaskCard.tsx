@@ -23,7 +23,7 @@ export default function TaskCard({
   onDelete,
   role,
   onStatusChange,
-}: TaskCardProps) {
+}: Readonly<TaskCardProps>) {
   return (
     <div className="mb-4 rounded-lg border p-4 shadow">
       <h2 className="text-xl font-semibold">
@@ -33,39 +33,39 @@ export default function TaskCard({
       <p>{task.description}</p>
 
       {role === "user" ? (
-  <div className="mt-2">
-    <label className="font-medium">
-      Status:
-    </label>
+        <div className="mt-2">
+          <label className="font-medium">
+            Status:
+          </label>
 
-    <select
-  defaultValue={task.status}
-  onChange={(e) =>
-    onStatusChange?.(
-      task.id,
-      e.target.value
-    )
-  }
-  className="ml-2 rounded border p-1"
->
-      <option value="Pending">
-        Pending
-      </option>
+          <select
+            defaultValue={task.status}
+            onChange={(e) =>
+              onStatusChange?.(
+                task.id,
+                e.target.value
+              )
+            }
+            className="ml-2 rounded border p-1"
+          >
+            <option value="Pending">
+              Pending
+            </option>
 
-      <option value="In Progress">
-        In Progress
-      </option>
+            <option value="In Progress">
+              In Progress
+            </option>
 
-      <option value="Completed">
-        Completed
-      </option>
-    </select>
-  </div>
-) : (
-  <p className="mt-2 font-medium">
-    Status: {task.status}
-  </p>
-)}
+            <option value="Completed">
+              Completed
+            </option>
+          </select>
+        </div>
+      ) : (
+        <p className="mt-2 font-medium">
+          Status: {task.status}
+        </p>
+      )}
 
       {onEdit && (
         <button
