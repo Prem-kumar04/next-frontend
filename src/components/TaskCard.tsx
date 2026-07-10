@@ -34,11 +34,15 @@ export default function TaskCard({
 
       {role === "user" ? (
         <div className="mt-2">
-          <label className="font-medium">
+          <label
+            htmlFor={`status-${task.id}`}
+            className="font-medium"
+          >
             Status:
           </label>
 
           <select
+            id={`status-${task.id}`}
             defaultValue={task.status}
             onChange={(e) =>
               onStatusChange?.(
@@ -69,6 +73,7 @@ export default function TaskCard({
 
       {onEdit && (
         <button
+          type="button"
           onClick={() => onEdit(task)}
           className="mr-2 mt-4 rounded bg-yellow-500 px-4 py-2 text-white"
         >
@@ -78,6 +83,7 @@ export default function TaskCard({
 
       {onDelete && (
         <button
+          type="button"
           onClick={() => onDelete(task.id)}
           className="mt-4 rounded bg-red-600 px-4 py-2 text-white"
         >
