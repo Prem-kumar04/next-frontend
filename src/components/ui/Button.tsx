@@ -10,7 +10,7 @@ export default function Button({
   onClick,
   type = "button",
   className = "",
-}: ButtonProps) {
+}: Readonly<ButtonProps>) {
   return (
     <button
       type={type}

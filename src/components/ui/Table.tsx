@@ -6,7 +6,7 @@ type TableProps = {
 export default function Table({
   headers,
   children,
-}: TableProps) {
+}: Readonly<TableProps>) {
   return (
     <div className="overflow-x-auto">
       <table className="w-full border-collapse">

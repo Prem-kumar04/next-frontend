@@ -10,7 +10,7 @@ export default function Modal({
   title,
   children,
   onClose,
-}: ModalProps) {
+}: Readonly<ModalProps>) {
   if (!isOpen) return null;
 
   return (
